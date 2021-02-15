@@ -1,0 +1,34 @@
+<!-- <h2 mat-dialog-title>{{data.name}}</h2>
+<mat-dialog-content>
+
+</mat-dialog-content>
+<mat-dialog-actions>
+    <div class="text-right">
+        <button class="btn btn-secondary" type="button" (click)="close()"><i class="fa fa-times"></i> Close</button>
+    </div>
+</mat-dialog-actions> -->
+<div class="row">
+    <div class="col-sm-6"><h2 mat-dialog-title>{{data.name}}</h2></div>
+    <div class="col-sm-5"></div>
+    <div class="col-sm-1"><h4><span class="badge m-r-5 badge-light-secondary">{{timer$ | async | formatTime}}</span></h4></div>
+</div>
+<mat-dialog-content class="mat-typography">
+    <p>{{data.description}}.</p>
+    <!-- <div>
+        <h1>Countdown timer</h1>
+        <h2>{{timer$ | async | formatTime}}</h2>
+    </div> -->
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">Write your code here: </label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="15"></textarea>
+    </div>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button class="btn btn-info" mat-button ><i class="fa fa-bug" aria-hidden="true"></i> Add Bugs</button>
+    <button class="btn btn-dark" mat-button ><i class="fa fa-database"></i> Artifacts</button>
+    <button class="btn btn-warning" mat-button ><i class="fa fa-play" aria-hidden="true"></i> Executer</button>
+    <button class="btn btn-success" mat-button><i class="feather icon-check-circle" ></i>Validate</button>
+    <button class="btn btn-secondary" mat-button mat-dialog-close><i class="fa fa-times"></i> Close</button>
+    <!-- <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button> -->
+</mat-dialog-actions>

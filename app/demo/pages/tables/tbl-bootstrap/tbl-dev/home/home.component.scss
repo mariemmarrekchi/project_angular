@@ -1,0 +1,77 @@
+.header {
+    text-align: center;
+}
+
+th {
+    text-align: center;
+}
+
+td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.table thead th {
+    vertical-align: middle;
+}
+
+img {
+    border-radius: 100%;
+}
+
+.text-white {
+    background: #11c15b;
+    border-radius: 30px;
+    color: #fff;
+    content: attr(badge);
+    font-size: 11px;
+    margin-top: -10px;
+    min-width: 20px;
+    padding: 2px;
+    position: absolute;
+    text-align: center;
+    display: inline-block;
+    padding: 0.25em 0.4em;
+    font-weight: 700;
+    line-height: 1;
+    white-space: nowrap;
+    vertical-align: baseline
+}
+
+.badge {
+    background: #00acc1;
+    border-radius: 30px;
+    color: #fff;
+    content: attr(badge);
+    font-size: 11px;
+    margin-top: -10px;
+    min-width: 20px;
+    padding: 2px;
+    position: absolute;
+    text-align: center;
+    display: inline-block;
+    padding: 0.25em 0.4em;
+    font-weight: 700;
+    line-height: 1;
+    white-space: nowrap;
+    vertical-align: baseline
+}
+
+.badge-- {
+    background: #ffa21d;
+    border-radius: 30px;
+    color: #fff;
+    content: attr(badge);
+    font-size: 11px;
+    margin-top: -10px;
+    min-width: 20px;
+    padding: 2px;
+    position: absolute;
+    text-align: center;
+    display: inline-block;
+    padding: 0.25em 0.4em;
+    font-weight: 700;
+    line-height: 1;
+    white-space: nowrap;
+    vertical-align: baseline
+}

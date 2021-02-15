@@ -1,0 +1,72 @@
+<div class="row">
+  <div class="col-sm-12">
+    <app-card [hidHeader]="true" cardClass="tab-card">
+      <h5 class="mb-3">Basic Tabs</h5>
+      <ngb-tabset (click)="change($event)">
+        <ngb-tab id="{{team.name}}" *ngFor="let team of teams" title="{{team.name}}">
+          <ng-template ngbTabContent>
+            <div class="row" *ngIf="teamDetail != undefined">
+              <div class="col col-lg-10">
+                <textarea class="form-control" rows="15">
+                  {{teamDetail.code}}
+                </textarea>
+
+              </div>
+              <div class="col col-lg-2">
+                <ul class="list-group responsive">
+                  <li class="list-group-item"><i class="fa fa-bug" aria-hidden="true"></i> Bugs <span
+                      class="badge m-r-5 badge-light-danger">{{teamDetail.bugs}}</span></li>
+                  <li class="list-group-item"><i class="fa fa-lock" aria-hidden="true"></i> Vulnerability <span
+                      class="badge m-r-5 badge-light-danger">{{teamDetail.vulnerabilty}}</span></li>
+                  <li class="list-group-item"><i class="fa fa-life-ring" aria-hidden="true"></i> Code smells <span
+                      class="badge m-r-5 badge-light-danger">{{teamDetail.codeSmells}}</span></li>
+                  <li class="list-group-item">Coverage <span
+                      class="badge m-r-5 badge-light-danger">{{teamDetail.coverage}}</span></li>
+                  <li class="list-group-item">Duplications <span
+                      class="badge m-r-5 badge-light-danger">{{teamDetail.duplication}}</span></li>
+                  <li class="list-group-item">
+                    <div class="input-group mb-3">
+                      <input type="text" class="form-control" placeholder="Score" aria-label="Score"
+                        aria-describedby="basic-addon2">
+                      <div class="input-group-append">
+                        <button class="btn btn-primary" type="button">Validate</button>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </ng-template>
+        </ngb-tab>
+      </ngb-tabset>
+    </app-card>
+  </div>
+</div>
+
+
+<app-ui-modal #exampleModalCenter dialogClass="modal-dialog-centered" >
+  <div class="app-modal-header">
+    <h5 class="modal-title">{{teamName}}</h5>
+  </div>
+  <div class="app-modal-body">
+    <ul class="list-group responsive" (click)="onClick($event)">
+      <li class="list-group-item" *ngFor = "let problem of problems" disabled="problem.disabled" >{{problem.name}}</li>
+    </ul>
+  </div>
+
+</app-ui-modal>
+
+<ng-template #mymodal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Bootstrap Modal</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    Here I am!
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
+  </div>
+</ng-template>

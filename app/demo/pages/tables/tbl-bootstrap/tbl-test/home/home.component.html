@@ -1,0 +1,54 @@
+<div class="row">
+    <div class="col-md-12">
+        <app-card cardTitle="Team Result Classification" blockClass="table-border-style">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th rowspan="2">Logo</th>
+                            <th rowspan="2">Name</th>
+                            <th colspan="2" class="header">TC Designed</th>
+                            <th colspan="2">Results</th>
+                            <th colspan="2">Bugs Found</th>
+                            <th colspan="2">Req Covered</th>
+                        </tr>
+                        <tr>
+                            <th>Designed</th>
+                            <th>Validated</th>
+                            <th>Designed</th>
+                            <th>Validated</th>
+                            <th>Designed</th>
+                            <th>Validated</th>
+                            <th>Designed</th>
+                            <th>Validated</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr *ngFor="let test of table ">
+
+                            <td>{{test.logo}}</td>
+                            <td>{{test.name}}</td>
+                            <td> <a [class.text-white]="test.TcDesigned.des === 'ok'" [class.badge]="test.TcDesigned.des === 'not yet'" [class.badge--]="test.TcDesigned.des === 'in progress'">{{test.TcDesigned.des}}</a></td>
+                            <td><a [class.text-white]="test.TcDesigned.val === 'ok'" [class.badge]="test.TcDesigned.val === 'not yet'" [class.badge--]="test.TcDesigned.val === 'in progress'">{{test.TcDesigned.val}}</a></td>
+
+                            <td><a [class.text-white]="test.results.des === 'ok'" [class.badge]="test.results.des === 'not yet'" [class.badge--]="test.results.des === 'in progress'">{{test.results.des}}</a></td>
+                            <td><a [class.text-white]="test.results.val === 'ok'" [class.badge]="test.results.val === 'not yet'" [class.badge--]="test.results.val === 'in progress'"> {{test.results.val}}</a></td>
+
+                            <td><a [class.text-white]="test.BugsFound.des === 'ok'" [class.badge]="test.BugsFound.des === 'not yet'" [class.badge--]="test.BugsFound.des === 'in progress'">{{test. BugsFound.des}}</a></td>
+                            <td><a [class.text-white]="test.BugsFound.val === 'ok'" [class.badge]="test.BugsFound.val === 'not yet'" [class.badge--]="test.BugsFound.val === 'in progress'">{{test. BugsFound.val}}</a></td>
+
+                            <td><a [class.text-white]="test.reqcovred.des === 'ok'" [class.badge]="test.reqcovred.des === 'not yet'" [class.badge--]="test.reqcovred.des === 'in progress'">{{test.reqcovred.des}}</a></td>
+                            <td><a id="req" [class.text-white]="test.reqcovred.val === 'ok'" [class.badge]="test.reqcovred.val === 'not yet'" [class.badge--]="test.reqcovred.val === 'in progress'">{{test.reqcovred.val}}</a></td>
+
+
+                        </tr>
+
+
+                    </tbody>
+                </table>
+            </div>
+        </app-card>
+    </div>
+    <button type="button" class="btn btn-secondary" data-dismiss="modal" routerLink="environment">Environment</button>
+</div>

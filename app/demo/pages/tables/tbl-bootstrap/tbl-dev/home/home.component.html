@@ -1,0 +1,39 @@
+<div class="row">
+    <div class="col-md-12">
+        <app-card cardTitle="Team Result Classification" blockClass="table-border-style">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Logo</th>
+                            <th>Name</th>
+                            <th>Problem1</th>
+                            <th>Problem 2</th>
+                            <th>Problem 3</th>
+                            <th>Problem 4</th>
+                            <th>Problem 5</th>
+                            <th>Problem 6</th>
+                            <th>Total</th>
+                            <th>Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of tests">
+                            <td>{{item.logo}}</td>
+                            <td>{{item.name}}</td>
+                            <td><a href="#" [class.text-white]="item.problem1 === 'ok'" [class.badge]="item.problem1 === 'not yet'" [class.badge--]="item.problem1 === 'in progress'">{{item.problem1}}</a></td>
+                            <td><a href="#" [class.text-white]="item.problem2 === 'ok'" [class.badge]="item.problem2 === 'not yet'" [class.badge--]="item.problem2 === 'in progress'">{{item.problem2}}</a></td>
+                            <td><a href="#" [class.text-white]="item.problem3 === 'ok'" [class.badge]="item.problem3 === 'not yet'" [class.badge--]="item.problem3 === 'in progress'">{{item.problem3}}</a></td>
+                            <td><a href="#" [class.text-white]="item.problem4 === 'ok'" [class.badge]="item.problem4 === 'not yet'" [class.badge--]="item.problem4 === 'in progress'">{{item.problem4}}</a></td>
+                            <td><a href="#" [class.text-white]="item.problem5 === 'ok'" [class.badge]="item.problem5 === 'not yet'" [class.badge--]="item.problem5 === 'in progress'">{{item.problem5}}</a></td>
+                            <td><a href="#" [class.text-white]="item.problem6 === 'ok'" [class.badge]="item.problem6 === 'not yet'" [class.badge--]="item.problem6 === 'in progress'">{{item.problem6}}</a></td>
+                            <td>{{item.total}}</td>
+                            <td>{{item.score}}</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </app-card>
+    </div>
+    <button type="button" class="btn btn-secondary" data-dismiss="modal" routerLink="environment">Environment</button>

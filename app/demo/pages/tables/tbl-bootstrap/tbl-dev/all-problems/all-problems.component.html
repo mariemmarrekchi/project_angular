@@ -1,0 +1,9 @@
+<button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+    {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+</button>
+<mat-horizontal-stepper [linear]="isLinear" #stepper>
+    <mat-step *ngFor="let problem of problems">
+        <ng-template matStepLabel>{{problem.name}}</ng-template>
+        <app-one-problem [name]="problem.name" [description]="problem.description"></app-one-problem>
+    </mat-step>
+</mat-horizontal-stepper>
